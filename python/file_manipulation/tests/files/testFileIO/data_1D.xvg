@@ -1,0 +1,39 @@
+# This file was created Wed May 16 15:58:36 2018
+# Created by:
+#                       :-) GROMACS - gmx traj, 2016.4 (-:
+# 
+# Executable:   /home/kevin/programs/gromacs-2016.4/bin/gmx
+# Data prefix:  /home/kevin/programs/gromacs-2016.4
+# Working dir:  /home/kevin/hdd/Projects/software_validation/dummy_particles/flat_bilayer/dummy_3.6nm
+# Command line:
+#   gmx traj -f dummy_traj.trr -s dummy_firstframe.pdb -ox /home/kevin/git_repos/dummy_particles/tests/files/testFileIO/data_1D.xvg -n unittest.ndx -e 100 -noz -noy
+# gmx traj is part of G R O M A C S:
+#
+# Gallium Rubidium Oxygen Manganese Argon Carbon Silicon
+#
+@    title "Coordinate"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Coordinate (nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "atom 1 X"
+@ s1 legend "atom 2 X"
+@ s2 legend "atom 3 X"
+@ s3 legend "atom 4 X"
+@ s4 legend "atom 5 X"
+@ s5 legend "atom 6 X"
+@ s6 legend "atom 7 X"
+@ s7 legend "atom 8 X"
+@ s8 legend "atom 9 X"
+@ s9 legend "atom 10 X"
+ 0	0.545	0.545	0.545	0.545	0.545	1.017	1.017	1.017	1.017	1.017
+ 20	0.543153	0.543153	0.543153	0.543153	0.543153	1.01355	1.01355	1.01355	1.01355	1.01355
+ 40	0.541494	0.541494	0.541494	0.541494	0.541494	1.01046	1.01046	1.01046	1.01046	1.01046
+ 60	0.538704	0.538704	0.538704	0.538704	0.538704	1.00525	1.00525	1.00525	1.00525	1.00525
+ 80	0.540883	0.540883	0.540883	0.540883	0.540883	1.00932	1.00932	1.00932	1.00932	1.00932
+ 100	0.540557	0.540557	0.540557	0.540557	0.540557	1.00871	1.00871	1.00871	1.00871	1.00871

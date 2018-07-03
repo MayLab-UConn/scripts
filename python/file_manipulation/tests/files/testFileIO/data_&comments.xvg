@@ -1,0 +1,59 @@
+# This file was created Wed May 16 15:56:10 2018
+# Created by:
+#                       :-) GROMACS - gmx traj, 2016.4 (-:
+# 
+# Executable:   /home/kevin/programs/gromacs-2016.4/bin/gmx
+# Data prefix:  /home/kevin/programs/gromacs-2016.4
+# Working dir:  /home/kevin/hdd/Projects/software_validation/dummy_particles/flat_bilayer/dummy_3.6nm
+# Command line:
+#   gmx traj -f dummy_traj.trr -s dummy_firstframe.pdb -ox /home/kevin/git_repos/dummy_particles/tests/files/testFileIO/data_3D.xvg -n unittest.ndx -e 100
+# gmx traj is part of G R O M A C S:
+#
+# Gromacs Runs One Microsecond At Cannonball Speeds
+#
+@    title "Coordinate"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Coordinate (nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "atom 1 X"
+@ s1 legend "atom 1 Y"
+@ s2 legend "atom 1 Z"
+@ s3 legend "atom 2 X"
+@ s4 legend "atom 2 Y"
+@ s5 legend "atom 2 Z"
+@ s6 legend "atom 3 X"
+@ s7 legend "atom 3 Y"
+@ s8 legend "atom 3 Z"
+@ s9 legend "atom 4 X"
+@ s10 legend "atom 4 Y"
+@ s11 legend "atom 4 Z"
+@ s12 legend "atom 5 X"
+@ s13 legend "atom 5 Y"
+@ s14 legend "atom 5 Z"
+@ s15 legend "atom 6 X"
+@ s16 legend "atom 6 Y"
+@ s17 legend "atom 6 Z"
+@ s18 legend "atom 7 X"
+@ s19 legend "atom 7 Y"
+@ s20 legend "atom 7 Z"
+@ s21 legend "atom 8 X"
+@ s22 legend "atom 8 Y"
+@ s23 legend "atom 8 Z"
+@ s24 legend "atom 9 X"
+@ s25 legend "atom 9 Y"
+@ s26 legend "atom 9 Z"
+@ s27 legend "atom 10 X"
+& s28 legend "atom 10 Y"
+& s29 legend "atom 10 Z"
+ 0	0.545	0.633	4.026	0.545	1.105	4.026	0.545	1.578	4.026	0.545	2.051	4.026	0.545	2.524	4.026	1.017	0.633	4.026	1.017	1.105	4.026	1.017	1.578	4.026	1.017	2.051	4.026	1.017	2.524	4.026
+ 20	0.543153	0.630855	4.03602	0.543153	1.10126	4.03602	0.543153	1.57265	4.03602	0.543153	2.04405	4.03602	0.543153	2.51545	4.03602	1.01355	0.630855	4.03602	1.01355	1.10126	4.03602	1.01355	1.57265	4.03602	1.01355	2.04405	4.03602	1.01355	2.51545	4.03602
+ 40	0.541494	0.628928	4.06028	0.541494	1.09789	4.06028	0.541494	1.56785	4.06028	0.541494	2.03781	4.06028	0.541494	2.50776	4.06028	1.01046	0.628928	4.06028	1.01046	1.09789	4.06028	1.01046	1.56785	4.06028	1.01046	2.03781	4.06028	1.01046	2.50776	4.06028
+ 60	0.538704	0.625688	4.09647	0.538704	1.09224	4.09647	0.538704	1.55977	4.09647	0.538704	2.02731	4.09647	0.538704	2.49484	4.09647	1.00525	0.625688	4.09647	1.00525	1.09224	4.09647	1.00525	1.55977	4.09647	1.00525	2.02731	4.09647	1.00525	2.49484	4.09647
+ 80	0.540883	0.628218	4.0842	0.540883	1.09665	4.0842	0.540883	1.56608	4.0842	0.540883	2.03551	4.0842	0.540883	2.50493	4.0842	1.00932	0.628218	4.0842	1.00932	1.09665	4.0842	1.00932	1.56608	4.0842	1.00932	2.03551	4.0842	1.00932	2.50493	4.0842
+ 100	0.540557	0.62784	4.07988	0.540557	1.09599	4.07988	0.540557	1.56513	4.07988	0.540557	2.03428	4.07988	0.540557	2.50342	4.07988	1.00871	0.62784	4.07988	1.00871	1.09599	4.07988	1.00871	1.56513	4.07988	1.00871	2.03428	4.07988	1.00871	2.50342	4.07988

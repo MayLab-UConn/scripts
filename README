@@ -1,7 +1,7 @@
-All MayLab-related scripts for general lab use should be kept here. This GitHub repository is maintained under the
-"MayLab-UConn" GitHub organization name. To change or contribute, get your GitHub username added as a user to the GitHub
-page. Current admins are Kevin and Eric.
+All MayLab-related scripts for general lab use should be kept here. This GitHub repository is
+maintained under the "MayLab-UConn" GitHub organization name. To change or contribute, get your
+GitHub username added as a user to the GitHub page. Current admins are Kevin and Eric.
 
-The files in this repository can be accessed on the cluster at /shared/maylab/scripts, but if that'll be a read-only
-repository, so to contribute you need to clone the repo on your own machine or partition in the cluster, then make the
-modifications locally and push them.
+The files in this repository can be accessed on the cluster at /shared/maylab/scripts, but
+that'll be a read-only repository, so to contribute you need to clone the repo on your own
+machine or partition in the cluster, then make the modifications locally and push them.

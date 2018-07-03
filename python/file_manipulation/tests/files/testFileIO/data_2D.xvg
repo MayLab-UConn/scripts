@@ -1,0 +1,49 @@
+# This file was created Wed May 16 15:58:26 2018
+# Created by:
+#                       :-) GROMACS - gmx traj, 2016.4 (-:
+# 
+# Executable:   /home/kevin/programs/gromacs-2016.4/bin/gmx
+# Data prefix:  /home/kevin/programs/gromacs-2016.4
+# Working dir:  /home/kevin/hdd/Projects/software_validation/dummy_particles/flat_bilayer/dummy_3.6nm
+# Command line:
+#   gmx traj -f dummy_traj.trr -s dummy_firstframe.pdb -ox /home/kevin/git_repos/dummy_particles/tests/files/testFileIO/data_2D.xvg -n unittest.ndx -e 100 -noz
+# gmx traj is part of G R O M A C S:
+#
+# Good gRace! Old Maple Actually Chews Slate
+#
+@    title "Coordinate"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Coordinate (nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "atom 1 X"
+@ s1 legend "atom 1 Y"
+@ s2 legend "atom 2 X"
+@ s3 legend "atom 2 Y"
+@ s4 legend "atom 3 X"
+@ s5 legend "atom 3 Y"
+@ s6 legend "atom 4 X"
+@ s7 legend "atom 4 Y"
+@ s8 legend "atom 5 X"
+@ s9 legend "atom 5 Y"
+@ s10 legend "atom 6 X"
+@ s11 legend "atom 6 Y"
+@ s12 legend "atom 7 X"
+@ s13 legend "atom 7 Y"
+@ s14 legend "atom 8 X"
+@ s15 legend "atom 8 Y"
+@ s16 legend "atom 9 X"
+@ s17 legend "atom 9 Y"
+@ s18 legend "atom 10 X"
+@ s19 legend "atom 10 Y"
+ 0	0.545	0.633	0.545	1.105	0.545	1.578	0.545	2.051	0.545	2.524	1.017	0.633	1.017	1.105	1.017	1.578	1.017	2.051	1.017	2.524
+ 20	0.543153	0.630855	0.543153	1.10126	0.543153	1.57265	0.543153	2.04405	0.543153	2.51545	1.01355	0.630855	1.01355	1.10126	1.01355	1.57265	1.01355	2.04405	1.01355	2.51545
+ 40	0.541494	0.628928	0.541494	1.09789	0.541494	1.56785	0.541494	2.03781	0.541494	2.50776	1.01046	0.628928	1.01046	1.09789	1.01046	1.56785	1.01046	2.03781	1.01046	2.50776
+ 60	0.538704	0.625688	0.538704	1.09224	0.538704	1.55977	0.538704	2.02731	0.538704	2.49484	1.00525	0.625688	1.00525	1.09224	1.00525	1.55977	1.00525	2.02731	1.00525	2.49484
+ 80	0.540883	0.628218	0.540883	1.09665	0.540883	1.56608	0.540883	2.03551	0.540883	2.50493	1.00932	0.628218	1.00932	1.09665	1.00932	1.56608	1.00932	2.03551	1.00932	2.50493
+ 100	0.540557	0.62784	0.540557	1.09599	0.540557	1.56513	0.540557	2.03428	0.540557	2.50342	1.00871	0.62784	1.00871	1.09599	1.00871	1.56513	1.00871	2.03428	1.00871	2.50342
