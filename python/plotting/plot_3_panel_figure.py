@@ -100,4 +100,6 @@ ax_C.text(-0.25, 1.05, 'C', fontsize=16, transform=ax_C.transAxes)
 # fine for me
 fig.tight_layout(pad=2)
 
-fig.savefig('sample.png')
+
+plt.show()
+# fig.savefig('sample_files/3_panel_figure/sample.png')
