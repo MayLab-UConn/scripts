@@ -1,5 +1,5 @@
 import unittest
-import numpy as np
+import numpy as np  # noqa
 import sys
 sys.path.append('./..')
 import file_io    # noqa
