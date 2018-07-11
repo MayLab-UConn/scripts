@@ -10,7 +10,6 @@ from matplotlib import animation
 # loading the data.
 anim_data = np.loadtxt('sample_files/animations/animation_data.csv', delimiter=',')
 anim_data[:, 1] = anim_data[:, 1] / np.max(anim_data[:, 1])   # normalize intensity
-adp_points = [300, 500, 700]   # these are the timepoints where ADP is added - we'll plot some lines to indicate them
 
 # setting up the basics of the figure - these won't change with the animation
 anim_fig = plt.figure()
