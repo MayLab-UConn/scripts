@@ -45,7 +45,7 @@ ax_A.set_xlabel('some data (nm)')                                          # equ
 ax_A.set_ylabel('polynomial')                                              # equivalent to plt.ylabel()
 ax_A.set_xticks((3, 6, 9))                                                 # equivalent to plt.xticks()
 ax_A.set_yticks((20, 40, 60, 80, 100))                                     # equivalent to plt.yticks()
-ax_A.legend(loc=2)                                                         # uses labels from plot - location can be decided by you using loc
+ax_A.legend(loc=2)                                                         # uses labels from plot - location can be decided by you using loc  # noqa
 
 # these two commands are to set the rightand top boundaries invisible - if desired. You may want the full box, but
 ax_A.spines['right'].set_visible(False)
