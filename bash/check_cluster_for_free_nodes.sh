@@ -6,24 +6,28 @@
 # -----------------------------------------------------------------------------------------------------
 # constants about the cluster
 # -----------------------------------------------------------------------------------------------------
-n_gpu_nodes=2
+
 n_maylab_nodes=11
 
 declare -A node_archs
 node_archs=(["broadwell"]="cn[325-328]" 
-            ["haswell"]="cn[137-324"] 
+            ["haswell"]="cn[137-324]" 
             ["ivy_bridge"]="cn[105-136]" 
-            ["sandy_bridge"]="cn[65-104]" )
-
-normal_partitions="general general_requeue parallel serial"
-architectures="broadwell haswell ivy_bridge sandy_bridge"
+            ["sandy_bridge"]="cn[65-104]"
+            ["skylake"]="cn[329-394]"
+            ["phi"]="phi[01-04]"
+            ["haswell_gpu"]="gpu[01-02]"
+            ["skylake_gpu"]="gpu[03-06]")
+             
+normal_partitions="debug general general_requeue parallel serial generalsky phi gpu gpu_v100"
+architectures="broadwell haswell haswell_gpu ivy_bridge sandy_bridge skylake phi skylake_gpu"
 
 # -----------------------------------------------------------------------------------------------------                                                                                                        
 # functions                                                                                                                                                                                  
 # -----------------------------------------------------------------------------------------------------   
 
 function get_sq_nodes () {
-    # parameters are qos, and running status (R/PD)                                                                                                                                                                # prints a total number of nodes -  capture output with command substitution                                                                                                                               
+    # parameters are qos, and running status (R/PD)                                                                                              # prints a total number of nodes -  capture output with command substitution                                                                                                                               
     echo `squeue -a -h --format=%2D -q $1 -t $2 |  awk '{s+=$1}END{print s}'`
 }   
 
@@ -42,10 +46,7 @@ n_may_pending=$( get_sq_nodes maylab PD )
 n_may_available=$((n_maylab_nodes - n_may_running))
 
 
-# next, check gpu
-n_gpu_running=$( get_sinfo_nodes gpu alloc )
-n_gpu_avail=$(( n_gpu_nodes - n_gpu_running ))
-n_gpu_pending=`squeue -a -h --format=%2D -p gpu -t PD | awk '{s+=$1} END {print s}'`
+
 
 
 # -----------------------------------------------------------------------------------------------------                                                                                                        
@@ -53,11 +54,13 @@ n_gpu_pending=`squeue -a -h --format=%2D -p gpu -t PD | awk '{s+=$1} END {print 
 # -----------------------------------------------------------------------------------------------------   
 
 printf "\n%-15s %14s %18s\n--------------------------------------------------\n" "partition" "architecture" "nodes available"
-printf "%-15s %14s %18d\n" "maylab" "ivy_bridge" $n_may_available
-printf "%-15s %14s %18d\n\n" "gpu" "haswell-gpu" $n_gpu_avail 
+
+if [ $n_may_available -gt 0 ]; then
+    printf "The following nodes are not claimed by the maylab (may or may not be immediately available)\n"
+    printf "%-15s %14s %18d\n\n" "maylab" "ivy_bridge" $n_may_available
+fi
 
 
-# check parallel
 for part in $normal_partitions; do
     for arch in $architectures; do
 	n_avail=`sinfo -h --format=%2D -p $part --nodes=${node_archs[$arch]} -t idle |  awk '{s+=$1}END{print s}'`
