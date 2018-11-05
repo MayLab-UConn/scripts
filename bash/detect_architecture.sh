@@ -9,8 +9,24 @@ function detect_architecture {
   case $ncpus in
     12) arch='westmere'    ;;
     16) arch='sandybridge' ;;
-    20) arch='ivybridge'   ;; # NOTE - THIS WILL CONFLICT WITH BROADWELL IN FUTURE
-    24) arch='haswell'     ;;
+    20) model=`lscpu | grep '^Model:' | awk '{print $2}'`
+	if [ $model -eq 62 ]; then
+	  arch='ivybridge'
+        elif [ $model -eq 79 ]; then
+          arch='broadwell-gpu'
+        else
+	  arch="unknown - ncpus=$ncpus"
+	fi ;;
+    24) arch='haswell'     
+        host=`hostname`
+        if [ "${host:0:3}" = "gpu" ]; then
+	    arch='haswell_gpu'
+        fi;;
+    36) arch='skylake'
+        host=`hostname`
+        if [ "${host:0:3}" = "gpu" ]; then
+            arch='skylake_gpu'
+        fi;;
     44) arch='broadwell'   ;;
     *)  arch="unknown - ncpus=$ncpus" ;;
   esac
