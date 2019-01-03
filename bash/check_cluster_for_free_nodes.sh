@@ -7,7 +7,8 @@
 # constants about the cluster
 # -----------------------------------------------------------------------------------------------------
 
-n_maylab_nodes=11
+n_maylab_ivy_nodes=11
+n_maylab_broadwell_nodes=10
 
 declare -A node_archs
 node_archs=(["broadwell"]="cn[325-328]" 
@@ -41,10 +42,11 @@ function get_sinfo_nodes () {
 
 # first maylab, -q for qos, -t to select running ("R") or pending "PD", %D for number of nodes, then the paste and bc commands to sum up columns
 # -h option removes header
-n_may_running=$( get_sq_nodes maylab R ) 
-n_may_pending=$( get_sq_nodes maylab PD )
-n_may_available=$((n_maylab_nodes - n_may_running))
+n_maylab_ivy_running=$( get_sq_nodes maylab R ) 
+n_maylab_ivy_pending=$( get_sq_nodes maylab PD )
+n_maylab_ivy_available=$((n_maylab_ivy_nodes - n_maylab_ivy_running))
 
+n_maylab_broadwell_available=`sinfo  -p GtxPriority | grep idle | awk ' {print $4}'`
 
 
 
@@ -55,9 +57,10 @@ n_may_available=$((n_maylab_nodes - n_may_running))
 
 printf "\n%-15s %14s %18s\n--------------------------------------------------\n" "partition" "architecture" "nodes available"
 
-if [ $n_may_available -gt 0 ]; then
+if [ $n_maylab_ivy_available -gt 0 ] || [ $n_maylab_broadwell_available -gt 0]; then
     printf "The following nodes are not claimed by the maylab (may or may not be immediately available)\n"
-    printf "%-15s %14s %18d\n\n" "maylab" "ivy_bridge" $n_may_available
+    printf "%-15s %14s %18d\n" "maylab" "ivy_bridge" $n_maylab_ivy_available
+    printf "%-15s %14s %18d\n\n" "maylab" "broadwell" $n_maylab_broadwell_available
 fi
 
 
