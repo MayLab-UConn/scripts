@@ -47,7 +47,9 @@ n_maylab_ivy_pending=$( get_sq_nodes maylab PD )
 n_maylab_ivy_available=$((n_maylab_ivy_nodes - n_maylab_ivy_running))
 
 n_maylab_broadwell_available=`sinfo  -p GtxPriority | grep idle | awk ' {print $4}'`
-
+if [ -z "$n_maylab_broadwell_available" ]; then
+    n_maylab_broadwell_available=0
+fi
 
 
 
@@ -57,7 +59,7 @@ n_maylab_broadwell_available=`sinfo  -p GtxPriority | grep idle | awk ' {print $
 
 printf "\n%-15s %14s %18s\n--------------------------------------------------\n" "partition" "architecture" "nodes available"
 
-if [ $n_maylab_ivy_available -gt 0 ] || [ $n_maylab_broadwell_available -gt 0]; then
+if [ $n_maylab_ivy_available -gt 0 ] || [ $n_maylab_broadwell_available -gt 0 ]; then
     printf "The following nodes are not claimed by the maylab (may or may not be immediately available)\n"
     printf "%-15s %14s %18d\n" "maylab" "ivy_bridge" $n_maylab_ivy_available
     printf "%-15s %14s %18d\n\n" "maylab" "broadwell" $n_maylab_broadwell_available
