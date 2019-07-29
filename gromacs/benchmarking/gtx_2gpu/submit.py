@@ -36,10 +36,10 @@ for nj in njobs:
 		command = "sbatch sub.sh"
 		os.system(command)
 	elif nj == 4:
-		gmx_command1 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job1 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 0 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command2 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job2 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 5 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command3 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job3 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 10 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command4 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job4 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 15 -nb gpu -pme gpu -npme 1\n"
+		gmx_command1 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job1 -ntmpi 1 -ntomp 5 -gputasks 00 -pin on -pinoffset 0 -nb gpu -pme gpu  &\n"
+		gmx_command2 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job2 -ntmpi 1 -ntomp 5 -gputasks 00 -pin on -pinoffset 5 -nb gpu -pme gpu  &\n"
+		gmx_command3 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job3 -ntmpi 1 -ntomp 5 -gputasks 11 -pin on -pinoffset 10 -nb gpu -pme gpu &\n"
+		gmx_command4 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job4 -ntmpi 1 -ntomp 5 -gputasks 11 -pin on -pinoffset 15 -nb gpu -pme gpu \n"
 		f.write(gmx_command1)
 		f.write(gmx_command2)
 		f.write(gmx_command3)
@@ -49,16 +49,16 @@ for nj in njobs:
 		command = "sbatch sub.sh"
 		os.system(command)
 	elif nj == 10:
-		gmx_command1 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job1 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 0 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command2 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job2 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 2 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command3 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job3 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 4 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command4 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job4 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 6 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command5 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job5 -ntmpi 2 -ntomp 5 -gputasks 00 -pin on -pinoffset 8 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command6 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job6 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 10 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command7 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job7 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 12 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command8 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job8 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 14 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command9 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job9 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 16 -nb gpu -pme gpu -npme 1 &\n"
-		gmx_command10 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job10 -ntmpi 2 -ntomp 5 -gputasks 11 -pin on -pinoffset 18 -nb gpu -pme gpu -npme 1 \n"
+		gmx_command1 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job1 -ntmpi 1 -ntomp 2 -gputasks 00 -pin on -pinoffset 0 -nb gpu -pme gpu  &\n"
+		gmx_command2 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job2 -ntmpi 1 -ntomp 2 -gputasks 00 -pin on -pinoffset 2 -nb gpu -pme gpu  &\n"
+		gmx_command3 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job3 -ntmpi 1 -ntomp 2 -gputasks 00 -pin on -pinoffset 4 -nb gpu -pme gpu  &\n"
+		gmx_command4 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job4 -ntmpi 1 -ntomp 2 -gputasks 00 -pin on -pinoffset 6 -nb gpu -pme gpu  &\n"
+		gmx_command5 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job5 -ntmpi 1 -ntomp 2 -gputasks 00 -pin on -pinoffset 8 -nb gpu -pme gpu  &\n"
+		gmx_command6 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job6 -ntmpi 1 -ntomp 2 -gputasks 11 -pin on -pinoffset 10 -nb gpu -pme gpu  &\n"
+		gmx_command7 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job7 -ntmpi 1 -ntomp 2 -gputasks 11 -pin on -pinoffset 12 -nb gpu -pme gpu  &\n"
+		gmx_command8 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job8 -ntmpi 1 -ntomp 2 -gputasks 11 -pin on -pinoffset 14 -nb gpu -pme gpu  &\n"
+		gmx_command9 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job9 -ntmpi 1 -ntomp 2 -gputasks 11 -pin on -pinoffset 16 -nb gpu -pme gpu  &\n"
+		gmx_command10 = "gmx mdrun -s $tpr -nsteps " +str(steps) +" -deffnm job10 -ntmpi 1 -ntomp 2 -gputasks 11 -pin on -pinoffset 18 -nb gpu -pme gpu  \n"
 		f.write(gmx_command1)
 		f.write(gmx_command2)
 		f.write(gmx_command3)
